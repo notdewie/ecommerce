@@ -27,7 +27,7 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
     return view('admin.index');
 })->name('dashboard');
 
-Route::get('/admin/logout', [AdminController::class, 'loginForm'])->name('admin.logout');
+Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
 
 
 
