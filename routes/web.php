@@ -111,6 +111,8 @@ Route::prefix('category')->group(function(){
 
     Route::get('/subcategory/ajax/{category_id}',[SubCategoryController::class,'GetSubCategory']);
 
+    Route::get('/sub-subcategory/ajax/{subcategory_id}',[SubCategoryController::class,'GetSubSubCategory']);
+
     Route::post('/sub/sub/store', [SubCategoryController::class, 'SubSubCategoryStore'])->name('subsubcategory.store');
 
     Route::get('/sub/sub/edit/{id}', [SubCategoryController::class, 'SubSubCategoryEdit'])->name('subsubcategory.edit');
@@ -125,12 +127,5 @@ Route::prefix('category')->group(function(){
 Route::prefix('product')->group(function(){
     Route::get('/add',[ProductController::class,'AddProduct'])->name('add-product');
     
-    // Route::post('/store',[BrandController::class,'BrandStore'])->name('brand.store');
-     
-    // Route::get('/edit/{id}',[BrandController::class,'BrandEdit'])->name('brand.edit');
-        
-    // Route::post('/update',[BrandController::class,'BrandUpdate'])->name('brand.update');
-
-    // Route::get('/delete/{id}',[BrandController::class,'BrandDelete'])->name('brand.delete');
 });
 
